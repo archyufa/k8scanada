@@ -1,1 +1,1 @@
-# k8scanada
+# OttawaDocker-workshop

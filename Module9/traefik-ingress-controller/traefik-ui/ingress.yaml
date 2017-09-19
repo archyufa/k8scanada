@@ -1,0 +1,12 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: traefik-ingress
+spec:
+  rules:
+  - host: ingress-ui.com
+    http:
+      paths:
+      - backend:
+          serviceName: traefik-ingress-controller
+          servicePort: 8090

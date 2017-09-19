@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    service: traefik-ingress-controller
+  name: traefik-ingress-controller
+spec:
+  ports:
+  - name: "webui"
+    port: 8090
+    nodePort: 30008
+    protocol: TCP
+    targetPort: 8090
+  - name: "80"
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  - name: "443"
+    port: 443
+    protocol: TCP
+    targetPort: 443
+  type: NodePort
+  selector:
+    service: traefik-ingress-controller
+status:
+  loadBalancer: {}
