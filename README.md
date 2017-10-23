@@ -1,1 +1,1 @@
-# OttawaDocker-workshop
+# docker-workshop
