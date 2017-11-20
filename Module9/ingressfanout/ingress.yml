@@ -5,17 +5,14 @@ metadata:
   name: helloworld-rules
 spec:
   rules:
-  - host: k8s.example.com
+  - host: example.com
     http:
       paths:
-      - path: /
+      - path: /k8s
         backend:
           serviceName: webk8sbirthday-v1
           servicePort: 80
-  - host: openstack.example.com
-    http:
-      paths:
-      - path: /
+      - path: /openstack
         backend:
           serviceName: webk8sbirthday-v2
           servicePort: 80
