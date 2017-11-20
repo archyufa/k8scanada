@@ -2,7 +2,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: name-based-rules
+  name: helloworld-rules
 spec:
   rules:
   - host: k8s.example.com
