@@ -10,12 +10,12 @@ spec:
       paths:
       - path: /
         backend:
-          serviceName: helloworld-v1
+          serviceName: webk8sbirthday-v1
           servicePort: 80
   - host: openstack.example.com
     http:
       paths:
       - path: /
         backend:
-          serviceName: helloworld-v2
+          serviceName: webk8sbirthday-v2
           servicePort: 80
