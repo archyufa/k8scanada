@@ -1,4 +1,5 @@
-# An Ingress with 2 hosts and 3 endpoints
+# An Ingress Simple Fanout allows Exposing multiple services :q!to different paths of the same host  
+# using different paths
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
