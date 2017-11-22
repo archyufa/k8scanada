@@ -3,10 +3,10 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: helloworld-rules
+  name: simple-fanout-ingress
 spec:
   rules:
-  - host: example.com
+  - host: k8sworkshop.com
     http:
       paths:
       - path: /k8s
