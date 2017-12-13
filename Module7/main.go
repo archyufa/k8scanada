@@ -65,7 +65,7 @@ func main() {
 		<title>K8s Simple Demo</title>
 	</head>
 	<body style="font-family: Helvetica; font-size: .7em; text-align: center">
-		<h1>Happy Birthday OpenStack!</h1>
+		<h1>Happy Birthday Kubernetes!</h1>
         <h3 style="padding: 1em; background-color: red; color: white;">ID: %q</h3>
 	</body>
 </html>`
