@@ -66,7 +66,7 @@ func main() {
 	</head>
 	<body style="font-family: Helvetica; font-size: .7em; text-align: center">
 		<h1>Happy Birthday Kubernetes!</h1>
-        <h3 style="padding: 1em; background-color: red; color: white;">ID: %q</h3>
+        <h3 style="padding: 1em; background-color: blue; color: white;">ID: %q</h3>
 	</body>
 </html>`
 
