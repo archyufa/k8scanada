@@ -18,8 +18,8 @@ spec:
       - env:
         - #TODO: define name as MYSQL_ROOT_PASSWORD
           #TODO: define value as cloudops
-        #TODO: Replace $PROJECT_ID with value from `echo $PROJECT_ID`
-        image: gcr.io/$PROJECT_ID/gowebapp:v1
+        #TODO: Replace <user-name> with value you Docker-Hub ID.
+        image: <user-name>/gowebapp:v1
         name: gowebapp
         ports:
         - #TODO: define the container port as 80
