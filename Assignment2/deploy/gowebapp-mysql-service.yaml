@@ -1,0 +1,12 @@
+#TODO: Specify Kubernetes API apiVersion
+#TODO: Identify the kind of Object
+metadata:
+ #TODO: Give the service a name: "gowebapp-mysql"
+  labels:
+    #TODO: Add a label KV "run: gowebapp-mysql"
+spec:
+  #TODO: leave the clusterIP to None. We allow k8s to assign clusterIP.
+  ports:
+    #TODO: Define a "port" as 3306
+    #TODO: Define a "targetPort" as 3306
+  #TODO: Add a selector for our pods as label "run" with value "gowebapp-mysql"

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: gowebapp
+  labels:
+    #TODO: give the Service a label: tier: frontend
+    #TODO: give the Service a label: tier: frontend
+spec:
+  #TODO: Define a "ports" array with the "port" attribute: 9000 and "targetPort" attributes: 80
+  #TODO: Add a selector for our pods as label "run" with value "gowebapp"
+  #TODO: Add a Service Type of NodePort
+  #If you need help, see reference: https://kubernetes.io/docs/concepts/services-networking/service/#publishing   -services-service-types
