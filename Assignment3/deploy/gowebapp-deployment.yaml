@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: gowebapp
+   labels:
+     run: gowebapp
+spec:
+   replicas: 2
+   selector:
+     matchLabels:
+       run: gowebapp
+   template:
+     metadata:
+       labels:
+         run: gowebapp
+     spec:
+       containers:
+       - env:
+       name: DB_PASSWORD
+           #TODO: replace value: cloudops with valueFrom:
+             secretKeyRef:
+               #TODO: name is mysql
+               #TODO: key is password
+         image: <#TODO_user-name>/gowebapp:v1
+         name: gowebapp
+         ports:
+           - containerPort: 80
+         #TODO add a livenessProbe which performs httpGet
+against the /register endpoint on port 80 with an initial
+delay of 15 seconds, and a timeout of 5 seconds
+         readinessProbe:
+           httpGet:
+             path: /register
+             port: 80
+           initialDelaySeconds: 25
+           timeoutSeconds: 5
+         resources:
+           #TODO define a resource request of 200m cpu and 128Mi memory
+         limits:
+           cpu: 250m
+           memory: 256Mi
+         volumeMounts:
+           - #TODO: give the volume a name:config-volume
+             #TODO: specify the mountPath: /go/src/gowebapp/config
+       volumes: 
+       - #TODO: define volume name: config-volume
+         configMap:
+           #TODO: identify your ConfigMap name: gowebapp
+           items:
+           - key: webapp-config-json
+             path: config.json
