@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: gowebapp-mysql
+   labels:
+     run: gowebapp-mysql
+     tier: backend
+spec:
+   replicas: 1
+   selector:
+     matchLabels:
+       run: gowebapp-mysql
+   strategy:
+     type: Recreate
+   template:
+     metadata:
+       labels:
+         run: gowebapp-mysql
+     spec:
+       containers:
+       - env:
+         valueFrom:
+           #TODO: replace value: heptio with secretKeyRef
+           #TODO: name is mysql
+           #TODO: key is password
+         image: archyufa/gowebapp-mysql:v1
+         name: gowebapp-mysql
+         ports:
+         - containerPort: 3306
+         livenessProbe:
+           tcpSocket:
+             port: 3306
+           initialDelaySeconds: 30
+           timeoutSeconds: 2
+         #TODO add a readiness probe for tcpSocket 3306 with a 25 second initial delay, and a timeout of 2 seconds
+         resources:
+           requests:
+             cpu: 256m
+             memory: 256Mi
+         #TODO define a resource limit of 512m cpu and
+         512Mi memory
