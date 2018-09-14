@@ -19,7 +19,8 @@ spec:
      spec:
        containers:
        - env:
-         valueFrom:
+         - name: MYSQL_ROOT_PASSWORD
+           valueFrom:
            #TODO: replace value: cloudops with secretKeyRef
            #TODO: name is mysql
            #TODO: key is password
