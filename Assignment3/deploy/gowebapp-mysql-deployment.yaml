@@ -20,7 +20,7 @@ spec:
        containers:
        - env:
          valueFrom:
-           #TODO: replace value: heptio with secretKeyRef
+           #TODO: replace value: cloudops with secretKeyRef
            #TODO: name is mysql
            #TODO: key is password
          image: archyufa/gowebapp-mysql:v1
