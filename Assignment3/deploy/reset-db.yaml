@@ -1,0 +1,35 @@
+apiVersion: batch/v1
+#TODO set kind: Job
+metadata:
+  name: reset-db
+  labels:
+    run: reset-db
+spec:
+  #TODO set activeDeadlineSeconds: 10 to limit how long a
+failing Job retries
+  template:
+  metadata:
+    name: reset-db
+  spec:
+  #TODO: have the job automatically restart on failure by
+setting restartPolicy: OnFailure
+  containers:
+  - name: database-cleaner
+  image: mysql:5.6
+  env:
+  - name: DB_USER
+    value: root
+  - name: DB_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: mysql
+        key: password
+    - name: DB_HOST
+      value: gowebapp-mysql
+    - name: DB
+      value: gowebapp
+  command:
+    - /bin/sh
+    args:
+    - -c
+    - mysql -h $(DB_HOST) -u $(DB_USER) -p$(DB_PASSWORD)$(DB) -e 'delete from note; delete from user;'
