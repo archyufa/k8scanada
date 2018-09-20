@@ -20,5 +20,6 @@ spec:
          - name: MYSQL_ROOT_PASSWORD
            value: cloudops
          image: #TODO define MySQL image created at Ass1
+         name: gowebapp-mysql
          ports:
          #TODO: define containerPort: 3306
