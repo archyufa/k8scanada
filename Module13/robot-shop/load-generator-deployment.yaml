@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: load-generator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: load-generator
+  template:
+    metadata:
+      labels:
+        app: load-generator
+    spec:
+      containers:
+      - image: adriantodorov/rs-load:latest
+        name: rs-load-generator
+        env:
+        - name: HOST
+          value: "http://web.robot-shop:8080"
+        - name: NUM_CLIENTS
+          value: "10"
+      restartPolicy: Always
